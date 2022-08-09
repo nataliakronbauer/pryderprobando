@@ -1,0 +1,374 @@
+/*COLORES:
+#fdcae1  rosa
+#d0f4de  verde
+#fcf6bd  amarillo
+#a9def9  celeste
+#e4c1f9  violeta
+#ffd6a5  naranja
+#abc4ff  azul*/
+
+/*INICIO DESKTOP VIEW*/
+* {
+    font-family: 'Saira Condensed', sans-serif;
+    margin: 0.5%;
+    padding: 10;
+}
+.grid {
+    display: grid;
+    height: 100vh; /*Altura  -- 100vh (cubre toda la pág)*/
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*tamaño de las columnas -- fr--> Ancho del pág*/
+    grid-template-rows: 1fr 1fr 1fr 0.2fr; /*tamaño de las filas*/
+    grid-column-gap: 5px; /*Espacio entre las columnas */
+    grid-row-gap: 2px; /*Espacio entre las filas*/
+    /* gap: 10px ---> Se utiliza cuando el espacio entre las filas y las columnas es igual - 10px de espacio entre las columnas y 10pz de espacio entre las filas */
+}
+
+
+/* grid >* {} --> Aplica a los hijos directos/inmediatos/principales de grid
+grid * {} --> Aplica a todas las indentaciones */
+
+
+/*ENCABEZADO*/
+
+.grid > header {
+    grid-column: 1/6;
+}
+
+
+.grid > nav {
+    grid-column: 1/6; 
+    grid-row: 3/4;   
+    align-items: center;
+}
+
+#somosPryder {
+    text-align: center;
+    font-size: 30px;
+    background-image: radial-gradient(white, #fcf6bd);
+    line-height: 120%;
+}
+
+#somosPryderContacto {
+    text-align: center;
+    font-size: 30px;
+    background-image: radial-gradient(white, #fdcae1);
+    line-height: 120%;
+}
+
+.animation {
+    animation-name: efecto;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 4s;
+    animation-delay: 1s;
+}
+ @keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+ }
+
+ h1 {
+    animation-duration: 2s;
+    animation-name: aparecer;
+    animation-iteration-count: infinite;
+ }
+
+
+.logo {
+    width: 100px;
+    margin: 0%;
+}
+
+#menu {
+    background-color: #a9def9;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    color:black;
+}
+
+#menuContacto {
+    background-color: #fdcae1;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    color:black;
+}
+
+ul {
+    list-style: none;
+    font-size:0; /* truco por el uso de inline-block*/
+   }
+   li {
+    display: inline-block; /* En vez de mostrar uno debajo del otro, lo muestra en línea */
+    width: 20%;
+    position:relative;
+    font-size: 14px;
+   }
+   ul ul {
+    position: absolute;
+    display: none; /*que no se vea en principio */
+   }
+   ul ul li {
+    display: block; /* se visualiza uno debajo del otro */
+   }
+   ul li:hover ul { /* se muestra el elemento anidado */
+    display:block;
+}
+
+#imgtaza {
+    width: 650px;
+}
+
+
+.presentacionNosotras {
+    font-style: italic;
+}
+
+.hola {
+    font-size: 50px;
+}
+
+.realizamos {
+    font-size: 25px;
+    text-align: justify;
+    
+}
+
+.grid > section#section1 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+#section1 {
+    display: grid;
+    align-content: center ;
+    justify-content: end;
+    transform: skewY(15deg); 
+    transition: 2s;
+}
+
+.grid > section#section2 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+#section2 {
+    display: grid;
+    align-content: center;
+}
+.grid > section#section3 {
+    grid-column: 1/6;
+    grid-row: 5/6;
+}
+.prodDestacado {
+    background-color: #e4c1f9;
+    text-align: center;
+}
+
+.padre-flex{
+    display: flex;
+    background-color: #e4c1f9;
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
+    align-items: center;
+    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    justify-items: center;
+    text-align: center;
+}
+
+.padre-flex .hijo-flex img {
+    width: 200px;
+    height: auto;
+
+}
+
+.hijo-flex {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.grid > footer {
+    grid-column: 1/6;
+    grid-row: 6/10;
+    background-color: #ffd6a5 ;
+}
+
+#footer {
+    text-align: center;
+    background-color: #ffd6a5 ;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+#footerNosotras {
+    text-align: center;
+    background-color: #fdcae1 ;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.text {
+    height: 30px ;
+    background-color: white ; 
+    transition: 1s linear;
+}
+
+input:focus { /* Cuando haces CLICK */
+    height: 50px;
+    background-color: #fcf6bd ;
+}
+
+/*FIN DESKTOP VIEW*/
+
+
+
+/*INICIO TABLET VIEW*/
+
+@media screen and (max-width: 1199px) {
+
+    .grid {
+        height: 100vh; /*Altura  -- 100vh (cubre toda la pág)*/
+        display: grid;
+        grid-template-columns: 1fr 1fr; /*tamaño de las columnas -- fr--> Ancho del pág //// 5 columnas (5 fracciones)*/ 
+        grid-template-rows: 1fr 1fr 1fr 0.5fr; /*tamaño de las filas*/
+        
+    }
+
+    .hola {
+        font-size: 40px;
+    }
+    
+    .realizamos {
+        font-size: 20px;
+        text-align: justify;
+        
+    }
+
+    .grid > section#section1 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    #section1 {
+        display: grid;
+        align-content: center ;
+        justify-content: end;
+    }
+    
+    .grid > section#section2 {
+        grid-column: 3/4;
+        grid-row: 3/4;
+      
+    }
+    
+    #maps {
+        display: none;
+    }
+
+    #PDestacNone1 {
+        display: none;
+      }
+
+    #PDestacNone2 {
+        display: none;
+      }
+      #PDestacNone3 {
+        display: none;
+      }
+    #section2 {
+        display: grid;
+        align-content: center;
+    }
+    #imgtaza {
+        width: 500px;
+        background-color: white;
+    }
+    
+    .presentacionNosotras {
+        text-align: left ;
+        height: 10%;
+        font-size: 30px;
+    }
+
+    .grid > nav {
+        grid-row: 1/4; /*filas*/
+    }
+
+    .grid > aside {
+        display: none;
+    }
+
+    .grid > header {
+        grid-column: 2/6; /*columnas*/
+    }
+
+    .grid > section {
+        grid-column: 2/6; /*columnas*/
+    }
+
+    .grid > footer { 
+        grid-column: 1/6; /*columnas*/
+    }
+
+ 
+ 
+    
+}
+
+/*FIN TABLET VIEW*/
+
+
+
+/*INICIO MOBILE VIEW*/
+
+@media screen and (max-width: 600px) {
+    
+    .grid {
+        grid-template-columns: 1fr 1fr; /*tamaño de las columnas -- fr--> Ancho del pág //// 2 columnas (2 fracciones)*/
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 2fr 0.5fr; /*tamaño de las filas*/
+       
+    }
+
+    .grid > nav {
+        grid-column: 1/3; /*columnas*/
+        grid-row: 1/2; /*filas*/
+    }
+
+    .grid > header {
+        grid-column: 1/2; /*columnas*/
+    }
+
+    .grid > section#section1 {
+        grid-column: 1/2; /*columnas*/
+        grid-row: 4/5;
+    }
+    #PDestacNone0 {
+        display: none;
+      }
+    #newsletter {
+        display: none;
+      }
+    .grid > section#section2 {
+        grid-column: 1/2; /*columnas*/
+    }
+
+    .grid > footer {
+        grid-column: 1/2;
+    }
+
+  }
+  
+
+/*FIN MOBILE VIEW*/
