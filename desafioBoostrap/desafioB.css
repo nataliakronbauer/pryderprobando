@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.paddingTB{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footerBg h3 { 
+    text-align: center;
+}
+
+.col-lg-12,.col-lg-6{
+    padding-right: 0;
+    padding-left: 0;
+}
+.paddingT{
+    padding-top: 50px;
+}
+.centrar{
+    text-align: center;
+}
+
+.paddingLR{
+    padding-left: 10px; 
+    padding-right: 10px;
+}
+
+/* ESCRITORIO */
+@media only screen and (min-width: 1024px){
+.navbar-expand-lg .navbar-collapse{justify-content: flex-end;}
+.footerFlex{display: flex;justify-content: space-around;}
+}
+
+.presentacion {
+    text-align: justify;
+}
+
+
+/* MOBILE */
+@media only screen and (max-width: 767px){
+	.footerFlex{display: flex;flex-direction: column;}
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.cajas {
+    background-color: #f8f9fa;
+
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    width: 277px;
+    height: auto;
+    margin: 4px;
+    padding: 5px;
+
+}
+
+button {
+    width: 190px; 
+    border-color:white;
+    background-color:white
+}
+.con-cajas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
